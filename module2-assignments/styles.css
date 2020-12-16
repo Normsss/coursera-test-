@@ -13,12 +13,22 @@ p {
   height: 150px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 80px;
   font-family: Helvetica;
   color: black;
 }
 
 section {
   border: 1px solid black;
+}
+
+.title2 {
+position: relative;
+float: right;
+border: solid black;
+background-color: pink;
+font-size: xx-large;
+padding: 10px
 }
 
 body {
