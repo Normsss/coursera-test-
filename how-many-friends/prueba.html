@@ -22,29 +22,49 @@
 
     <div id='forma'>
       <input id="friends" value="">
-      <button onclick="numImaginaryFriends()">Tell me</button>
-    </div>
+      
+      <div class="box">
+        <button class="cta" onclick="numImaginaryFriends()">
+          <a>I'll face the truth </a>
+        </button>
+      </div>
     
-    <p id='demo'>
-      <i class="em em-bird" aria-role="presentation" aria-label="BIRD"></i>
-    </p><!-- lo que aparece al ejecutar el script-->
-    <button id='tellmewhy' onclick="" >Explain</button>
+    
+      <p id='demo'>
+         
+          <i id="emoji-bird" class="em-svg em-fish" aria-role="presentation" aria-label="BIRD"></i> 
+        
+      </p><!-- lo que aparece al ejecutar el script-->
+
+    </div>
   </div>
 
-<script>
-let numImaginaryFriends = () => {
-    
-    let friends;
-    friends = document.getElementById("friends").value;
-    
-    totalFriends = Math.round(friends * .33)
-    
-    document.getElementById("demo").innerHTML = "No, you actually have " + totalFriends + "." + " 😒";
-    document.createElement("tellmewhy").innerHTML = "Explain"
 
-  }
-
-</script>
 
 </body>
+<script>
+  let explainToMe =(tellmewhy)=> {
+  
+  tellmewhy = document.createElement("button");
+    tellmewhy.innerHTML = "why?";
+    document.body.appendChild(tellmewhy);
+  
+  }
+  
+  let numImaginaryFriends = (friends) => {
+      
+      
+      friends = document.getElementById("friends").value;
+      
+      totalFriends = Math.round(friends * .33)
+      
+      document.getElementById("demo").innerHTML = "No, you actually have " + totalFriends + "." + " 😒";
+  
+      explainToMe();
+    
+  }
+  </script>
 </html>
+
+
+
