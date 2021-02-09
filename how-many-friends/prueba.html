@@ -11,9 +11,9 @@
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
   </head> 
 <body>
-  <header>
-    <div id=barra>PLAT_LAB</div>
-  </header>
+  
+  <div id=barra> PLAT_LAB</div>
+  
   
   <div id='bg'></div> <!-- fondo poligonal-->
   <div>
@@ -30,12 +30,16 @@
       </div>
     
     
-      <p id='demo'>
+      <div id='demo'>
          
-          <i id="emoji-bird" class="em-svg em-fish" aria-role="presentation" aria-label="BIRD"></i> 
-        
-      </p><!-- lo que aparece al ejecutar el script-->
+          <i id="emoji-bird" class="em-svg em-fish" aria-role="presentation" aria-label="FISH"></i> 
+          <div id='ask'>
+            <p id='addedbutton'>
 
+            </p>
+          </div>
+      </div><!-- lo que aparece al ejecutar el script-->
+      
     </div>
   </div>
 
@@ -43,15 +47,23 @@
 
 </body>
 <script>
-  let explainToMe =(tellmewhy)=> {
+  let addButton =(buttonwhy, buttonshows)=> {
   
-  tellmewhy = document.createElement("button");
-    tellmewhy.innerHTML = "why?";
-    document.body.appendChild(tellmewhy);
-  
+    buttonwhy = document.createElement("button"); //crea el elemento bottón
+    
+    buttonwhy.addEventListener('click', function (event, emoji, emojishows) { //añade un atributo al bottón
+      document.getElementById('demo').innerHTML = 'You only have '+totalFriends+ ' friends because you`re unique.' }); //se creará dentro de "demo", desapareciendo lo demás
+      
+    buttonwhy.innerHTML = "why?";//lo que va a decir el botón
+   
+
+    buttonshows = document.getElementById("demo");
+    child = document.getElementById("ask");//se va al hijo del arriba indicado como "demo"
+    buttonshows.insertBefore(buttonwhy, child);
+
   }
   
-  let numImaginaryFriends = (friends) => {
+  let numImaginaryFriends = friends => {
       
       
       friends = document.getElementById("friends").value;
@@ -60,9 +72,10 @@
       
       document.getElementById("demo").innerHTML = "No, you actually have " + totalFriends + "." + " 😒";
   
-      explainToMe();
+      addButton();
     
   }
+
   </script>
 </html>
 
