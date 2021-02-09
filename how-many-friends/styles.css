@@ -21,6 +21,7 @@ body > #bg {
     z-index: -1;
     top: 0px;
     right: 0px;
+    bottom: 0px;
 }
 
 header {
@@ -101,3 +102,4 @@ button:hover {
     transform: rotate(0deg);
   }
 }
+
