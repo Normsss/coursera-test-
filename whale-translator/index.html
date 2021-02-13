@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whale Tranlator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Montserrat&family=Open+Sans&family=Yusei+Magic&display=swap" rel="stylesheet"> 
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  </head> 
+<body>
+  
+  <div id=barra> PLAT_LAB</div>
+  
+  
+  <div id='bg'></div> <!-- fondo poligonal-->
+  <div>
+    <h1>Tale whales your secrets</h1>
+
+    <div id='forma'>
+      <input id="messageInput" value="">
+      
+      <div class="box">
+        <button class="cta" onclick="translaTeToWhale()">
+          <a>Translate </a>
+        </button>
+      </div>
+    
+    
+      <div id='demo'>
+         
+          <i id="emoji-bird" class="em-svg em-fish" aria-role="presentation" aria-label="FISH"></i> 
+          <div id='ask'>
+            <p id='addedbutton'>
+
+            </p>
+          </div>
+      </div><!-- lo que aparece al ejecutar el script-->
+      
+    </div>
+  </div>
+
+
+
+</body>
+<script>
+
+let translaTeToWhale = messageInput => {
+
+let message = document.getElementById("messageInput").value;  
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+var resultArray = [];
+
+for (var i = 0; i < message.length; i++) {
+  for (var j = 0; j < vowels.length; j++) {
+    if (message[i] === vowels[j]) {
+      resultArray.push(message[i]);
+    }
+  }
+  if (message[i] === 'e') {
+  	resultArray.push(message[i]);
+  } else if (message[i] === 'u') {
+  	resultArray.push(message[i]);
+  } else if (message[i] === ' ') {
+  	resultArray.push(message[i]);
+  }
+}
+
+document.getElementById("demo").innerHTML = resultArray.join('').toUpperCase();
+
+}
+
+  </script>
+</html>
+
+
+

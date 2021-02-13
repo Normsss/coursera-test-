@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imaginary Friends</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Montserrat&family=Open+Sans&family=Yusei+Magic&display=swap" rel="stylesheet"> 
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  </head> 
+<body>
+  
+  <div id=barra> PLAT_LAB</div>
+  
+  
+  <div id='bg'></div> <!-- fondo poligonal-->
+  <div>
+    <h1>Your real friends</h1>
+    <p> How many friends do you have? </p>
+
+    <div id='forma'>
+      <input id="friends" value="">
+      
+      <div class="box">
+        <button class="cta" onclick="numImaginaryFriends()">
+          <a>I'll face the truth </a>
+        </button>
+      </div>
+    
+    
+      <div id='demo'>
+         
+          <i id="emoji-bird" class="em-svg em-fish" aria-role="presentation" aria-label="FISH"></i> 
+          <div id='ask'>
+            <p id='addedbutton'>
+
+            </p>
+          </div>
+      </div><!-- lo que aparece al ejecutar el script-->
+      
+    </div>
+  </div>
+
+
+
+</body>
+<script>
+  let addButton =(buttonwhy, buttonshows)=> {
+  
+    buttonwhy = document.createElement("button"); //crea el elemento bottón
+    
+    buttonwhy.addEventListener('click', function (event, emoji, emojishows) { //añade un atributo al bottón
+      document.getElementById('demo').innerHTML = 'You have just '+totalFriends+ ' friends because you are unique.' }); //se creará dentro de "demo", desapareciendo lo demás
+      
+    buttonwhy.innerHTML = "why?";//lo que va a decir el botón
+   
+
+    buttonshows = document.getElementById("demo");
+    child = document.getElementById("ask");//se va al hijo del arriba indicado como "demo"
+    buttonshows.insertBefore(buttonwhy, child);
+
+  }
+  
+  let numImaginaryFriends = friends => {
+      
+      
+      friends = document.getElementById("friends").value;
+      
+      totalFriends = Math.round(friends * .33)
+      
+      document.getElementById("demo").innerHTML = "No, you actually have " + totalFriends + "." + " 😒";
+  
+      addButton();
+    
+  }
+
+  </script>
+</html>
+
+
+
